@@ -1,0 +1,28 @@
+{
+  "name": "homebanking",
+  "version": "1.0.0",
+  "description": "Homebanking for Node Js Academy (Naranja X)",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrisGadea/Homebanking.git"
+  },
+  "keywords": [
+    "homebanking",
+    "naranjax",
+    "test"
+  ],
+  "author": "Cristian Gadea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrisGadea/Homebanking/issues"
+  },
+  "homepage": "https://github.com/CrisGadea/Homebanking#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.2"
+  }
+}
