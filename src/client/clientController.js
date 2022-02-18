@@ -1,4 +1,5 @@
-const getAll = require('./clientCase/getClients/getClients.js');
+const getAll = require('./clientCase/getClients/getClients');
+
 
 module.exports = {
 
