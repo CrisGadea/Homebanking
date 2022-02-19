@@ -8,6 +8,8 @@ const clientSchema = new mongoose.Schema({
 
   last_name: { type: String, required: true },
 
+  accounts: [{type: mongoose.Schema.Types.ObjectId, ref: 'account'}]
+
 })
 
-module.exports = mongoose.model('Clients', clientSchema,'Clients');
+module.exports = mongoose.model('client', clientSchema);

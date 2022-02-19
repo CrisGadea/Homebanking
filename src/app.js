@@ -1,4 +1,7 @@
 const path = require('path');
+
+const cors = require('cors');
+
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const express = require('express')
@@ -8,6 +11,10 @@ const mongoose = require('mongoose');
 const app = express()
 
 const port = 3000
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(cors())
 
 app.get('/clients', (req, res) => {
 
@@ -28,5 +35,3 @@ mongoose.connect(process.env.MONGODB, {useNewUrlParser: true, useUnifiedTopology
   .then(() => console.log ('Conexión a MongoDB establecida'))
 
   .catch(err => console.log (err))
-
-//  console.log(process.env.MONGODB)

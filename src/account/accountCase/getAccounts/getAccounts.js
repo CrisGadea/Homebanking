@@ -1,20 +1,18 @@
 const { response } = require('express');
 
-const clientRepository = require('../../../repositories/clientRepository');
+const accountRepository = require('../../../repositories/accountRepository');
 
-const getClients = async (req, res = response )  =>  {
+const getAccounts = async (req, res = response )  =>  {
 
     try {
   
-      const clients = await clientRepository.getAll();
-
-      console.log(clients)
+      const accounts = await accountRepository.getAll();
   
-      const count = await clientRepository.count();
+      const count = await accountRepository.count();
   
    
   
-      if(!clients){
+      if(!accounts){
   
         return res.status(401).json({
   
@@ -26,9 +24,9 @@ const getClients = async (req, res = response )  =>  {
   
         res.status(200).json({
   
-        message: 'Clients',
+        message: 'accounts',
   
-        response: clients,
+        response: accounts,
   
         total: count
   
@@ -36,7 +34,6 @@ const getClients = async (req, res = response )  =>  {
   
     } catch (error) {
   
-      console.log(error)
       res.status(500).json({
   
         message: 'Error Interno del Servidor',
@@ -49,12 +46,12 @@ const getClients = async (req, res = response )  =>  {
   
   }
 
-  const getClient = async (req, res = response) => {
+  const getAccount = async (req, res = response) => {
     try {
       
-      const client = await clientRepository.getOne(req.params.id);
+      const account = await accountRepository.getOne(req.params.id);
 
-      if(!client){
+      if(!account){
   
         return res.status(401).json({
   
@@ -66,9 +63,9 @@ const getClients = async (req, res = response )  =>  {
   
         res.status(200).json({
   
-        message: 'Client',
+        message: 'account',
   
-        response: client
+        response: account
   
       })
   
@@ -87,6 +84,6 @@ const getClients = async (req, res = response )  =>  {
 
   module.exports = {
 
-    getClients, getClient
+    getAccounts, getAccount
   
   }
