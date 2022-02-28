@@ -8,7 +8,9 @@ const clientSchema = new mongoose.Schema({
 
   last_name: { type: String, required: true },
 
-  accounts: [{type: mongoose.Schema.Types.ObjectId, ref: 'account'}]
+  accounts: [{type: mongoose.Schema.Types.ObjectId, ref: 'account', autopopulate: true}],
+
+  clientLoans: [{type: mongoose.Schema.Types.ObjectId, ref: 'clientLoan', autopopulate: true}]
 
 })
 
