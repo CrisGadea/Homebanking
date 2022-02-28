@@ -3,6 +3,7 @@ const { getAll, createClient } = require('../client/clientController');
 const {getAccounts, createAccount} = require('../account/accountController');
 const {getTransactions, createTransaction} = require('../transaction/transactionController');
 const {getClientLoans, createClientLoan} = require('../clientLoan/clientLoanController');
+const {getLoans, createLoan} = require('../loan/loanController');
 
 const router = new Router();
 
@@ -19,9 +20,13 @@ router.get('/transactions/:id',getTransactions.getTransaction);
 router.get('/transactions',getTransactions.getTransactions);
 router.post('/transactions',createTransaction.createTransaction);
 
-router.get('/clients/:id/loans/:id',getClientLoans.getClientLoans);
-router.get('/transactions',getClientLoans.getClientLoan);
-router.post('/transactions',createClientLoan.createClientLoan);
+router.get('/clientLoans/:id',getClientLoans.getClientLoans);
+router.get('/clientLoans',getClientLoans.getClientLoan);
+router.post('/clientLoans',createClientLoan.createClientLoan);
+
+router.get('/loans/:id',getLoans.getLoan);
+router.get('/loans',getLoans.getLoans);
+router.post('/loans',createLoan.createLoan);
 
 
 module.exports = router;
