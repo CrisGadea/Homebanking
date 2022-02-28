@@ -2,12 +2,14 @@ const Client = require('../models/clients');
 
 const Loan = require('../models/loan');
 
-const getAll = async ()  =>  await Client.find().populate('accounts');
+const ClientLoan = require('../models/clientLoan');
 
-const getOne = async (id)  => await Client.findById(id).populate('accounts');
+const getAll = async ()  =>  await ClientLoan.find().populate('clients').populate('loan');
+
+const getOne = async (id)  => await ClientLoan.findById(id).populate('clients').populate('loan');
 
 
-const count = async ()  =>  await Client.count();
+const count = async ()  =>  await ClientLoan.count();
 
 const save  = async (body)  =>  {
 

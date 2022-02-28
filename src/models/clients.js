@@ -10,6 +10,8 @@ const clientSchema = new mongoose.Schema({
 
   accounts: [{type: mongoose.Schema.Types.ObjectId, ref: 'account', autopopulate: true}],
 
+  cards: [{type: mongoose.Schema.Types.ObjectId, ref: 'card', autopopulate: true}],
+
   clientLoans: [{type: mongoose.Schema.Types.ObjectId, ref: 'clientLoan', autopopulate: true}]
 
 })
