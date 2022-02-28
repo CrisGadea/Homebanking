@@ -12,4 +12,6 @@ const loanSchema = new mongoose.Schema({
 
 })
 
+loanSchema.plugin(require('mongoose-autopopulate'));
+
 module.exports = mongoose.model('loan', loanSchema);

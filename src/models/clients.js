@@ -14,4 +14,6 @@ const clientSchema = new mongoose.Schema({
 
 })
 
+clientSchema.plugin(require('mongoose-autopopulate'));
+
 module.exports = mongoose.model('client', clientSchema);
